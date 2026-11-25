@@ -1,0 +1,872 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>老牛电影_在线观看免费版 - 经典片库与社区精选</title>
+<meta name="description" content="老牛电影在线观看免费版，汇集多类型经典与热门影片，提供清晰分类、片单推荐与活跃影迷社区，随时畅享观影时光。">
+<style>
+:root{
+  --bg:#0d0f14;
+  --bg2:#141821;
+  --bg3:#1b2029;
+  --line:#262c38;
+  --gold:#e8b04b;
+  --gold2:#f5cd7a;
+  --text:#e9ecf2;
+  --muted:#9aa3b2;
+  --red:#d9534f;
+  --radius:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+ul{list-style:none}
+.container{width:min(1200px,92%);margin:0 auto}
+
+/* ============ HEADER ============ */
+header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(13,15,20,.86);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.nav-wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.22rem;letter-spacing:.5px}
+.logo .mark{
+  width:38px;height:38px;border-radius:10px;
+  background:linear-gradient(135deg,var(--gold),#b9812c);
+  display:grid;place-items:center;color:#1a1206;font-size:1.1rem;font-weight:900;
+  box-shadow:0 4px 18px rgba(232,176,75,.35);
+}
+.logo span small{display:block;font-size:.62rem;color:var(--muted);font-weight:400;letter-spacing:2px}
+nav ul{display:flex;gap:30px;font-size:.94rem}
+nav a{color:var(--muted);transition:.25s;position:relative;padding:6px 0}
+nav a:hover{color:var(--gold2)}
+nav a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--gold);transition:.3s}
+nav a:hover::after{width:100%}
+.nav-actions{display:flex;align-items:center;gap:14px}
+.search-box{
+  display:flex;align-items:center;background:var(--bg3);
+  border:1px solid var(--line);border-radius:30px;padding:7px 14px;gap:8px;
+}
+.search-box input{background:none;border:none;outline:none;color:var(--text);font-size:.85rem;width:130px}
+.search-box svg{opacity:.5}
+.btn-ghost{
+  border:1px solid var(--gold);color:var(--gold);padding:8px 20px;border-radius:30px;
+  font-size:.85rem;transition:.3s;white-space:nowrap;
+}
+.btn-ghost:hover{background:var(--gold);color:#161006;box-shadow:0 0 20px rgba(232,176,75,.45)}
+.menu-toggle{display:none;background:none;border:1px solid var(--line);color:var(--text);padding:7px 11px;border-radius:8px;font-size:1rem}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;padding:90px 0 70px;overflow:hidden;
+  background:
+    radial-gradient(circle at 78% 20%, rgba(232,176,75,.14), transparent 44%),
+    radial-gradient(circle at 12% 80%, rgba(217,83,79,.13), transparent 46%),
+    linear-gradient(180deg,#10131a,#0d0f14);
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 1px,transparent 1px 64px),
+    repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 64px);
+  mask-image:radial-gradient(circle at 50% 40%,#000 40%,transparent 82%);
+}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.tagline{
+  display:inline-flex;align-items:center;gap:8px;font-size:.78rem;letter-spacing:2px;
+  color:var(--gold2);border:1px solid rgba(232,176,75,.35);
+  background:rgba(232,176,75,.08);padding:6px 16px;border-radius:30px;margin-bottom:24px;
+}
+.tagline .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold);animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+h1{
+  font-size:clamp(2.5rem,5vw,4.2rem);line-height:1.12;font-weight:900;
+  letter-spacing:1px;margin-bottom:14px;
+}
+h1 .hl{
+  background:linear-gradient(120deg,var(--gold2),var(--gold),#a86f1e);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero-sub{font-size:1.05rem;color:var(--muted);max-width:520px;margin-bottom:30px}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:38px}
+.btn-primary{
+  background:linear-gradient(135deg,var(--gold2),var(--gold));
+  color:#1a1206;font-weight:700;padding:14px 34px;border-radius:40px;
+  box-shadow:0 8px 30px rgba(232,176,75,.35);transition:.3s;display:inline-flex;gap:8px;align-items:center;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 38px rgba(232,176,75,.5)}
+.btn-line{
+  border:1px solid var(--line);padding:14px 30px;border-radius:40px;color:var(--text);transition:.3s;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.btn-line:hover{border-color:var(--gold);color:var(--gold2)}
+.hero-stats{display:flex;gap:44px;flex-wrap:wrap}
+.hero-stats div strong{display:block;font-size:1.7rem;color:var(--gold2);font-weight:800}
+.hero-stats div span{font-size:.8rem;color:var(--muted);letter-spacing:1px}
+
+/* poster stack */
+.poster-stage{position:relative;height:440px;perspective:1200px}
+.poster{
+  position:absolute;width:250px;height:350px;border-radius:16px;overflow:hidden;
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 24px 60px rgba(0,0,0,.65);
+  transition:transform .5s ease;
+}
+.poster .cover{position:absolute;inset:0}
+.poster .meta{
+  position:absolute;left:0;right:0;bottom:0;padding:38px 16px 14px;
+  background:linear-gradient(transparent,rgba(0,0,0,.92));
+}
+.poster .meta b{display:block;font-size:.95rem}
+.poster .meta i{font-style:normal;font-size:.72rem;color:var(--muted)}
+.p1{transform:translate(0,26px) rotate(-9deg);z-index:1}
+.p2{transform:translate(120px,0) rotate(0deg);z-index:3}
+.p3{transform:translate(238px,34px) rotate(9deg);z-index:2}
+.poster-stage:hover .p1{transform:translate(-26px,18px) rotate(-13deg)}
+.poster-stage:hover .p3{transform:translate(268px,26px) rotate(13deg)}
+.poster-stage:hover .p2{transform:translate(120px,-14px) scale(1.03)}
+.play-badge{
+  position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;
+  background:rgba(0,0,0,.5);backdrop-filter:blur(4px);display:grid;place-items:center;
+  border:1px solid rgba(255,255,255,.25);
+}
+
+/* ============ MARQUEE ============ */
+.ticker{
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:var(--bg2);overflow:hidden;white-space:nowrap;padding:13px 0;
+}
+.ticker-track{display:inline-flex;gap:46px;animation:scroll 32s linear infinite;font-size:.85rem;color:var(--muted)}
+.ticker-track span{display:inline-flex;align-items:center;gap:10px}
+.ticker-track span::before{content:"◆";color:var(--gold);font-size:.6rem}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ============ SECTION 通用 ============ */
+section{padding:84px 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:44px;flex-wrap:wrap}
+.sec-head .t small{color:var(--gold);letter-spacing:3px;font-size:.75rem;font-weight:700}
+.sec-head h2{font-size:clamp(1.6rem,3vw,2.3rem);font-weight:800;margin-top:8px;letter-spacing:.5px}
+.sec-head p{color:var(--muted);font-size:.92rem;max-width:420px;margin-top:6px}
+.more-link{color:var(--gold2);font-size:.87rem;border-bottom:1px solid rgba(232,176,75,.4);padding-bottom:3px;transition:.3s}
+.more-link:hover{letter-spacing:1px}
+
+/* ============ 影片网格 ============ */
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:34px}
+.chip{
+  padding:8px 20px;border-radius:30px;border:1px solid var(--line);
+  color:var(--muted);font-size:.85rem;cursor:pointer;transition:.28s;background:var(--bg2);
+}
+.chip:hover{border-color:var(--gold);color:var(--gold2)}
+.chip.active{background:var(--gold);color:#1a1206;font-weight:700;border-color:var(--gold)}
+.movie-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.card{
+  background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;transition:.35s;cursor:pointer;position:relative;
+}
+.card:hover{transform:translateY(-8px);border-color:rgba(232,176,75,.5);box-shadow:0 20px 44px rgba(0,0,0,.55)}
+.card .thumb{position:relative;aspect-ratio:2/2.9;overflow:hidden}
+.card .thumb .art{width:100%;height:100%;transition:transform .5s}
+.card:hover .thumb .art{transform:scale(1.06)}
+.card .score{
+  position:absolute;top:10px;left:10px;background:rgba(0,0,0,.66);backdrop-filter:blur(4px);
+  color:var(--gold2);font-size:.78rem;font-weight:800;padding:3px 9px;border-radius:8px;
+  border:1px solid rgba(232,176,75,.35);
+}
+.card .tag{
+  position:absolute;top:10px;right:10px;font-size:.68rem;padding:3px 8px;border-radius:6px;
+  background:rgba(217,83,79,.85);font-weight:700;letter-spacing:.5px;
+}
+.card .body{padding:14px 15px 17px}
+.card h3{font-size:.98rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card .sub{font-size:.76rem;color:var(--muted);margin-top:5px;display:flex;justify-content:space-between;gap:6px}
+
+/* ============ 特色区 ============ */
+.feature-sec{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.feat{
+  padding:30px 24px;border-radius:var(--radius);border:1px solid var(--line);
+  background:linear-gradient(160deg,#1a1f29,#141821);transition:.35s;
+}
+.feat:hover{transform:translateY(-6px);border-color:rgba(232,176,75,.45)}
+.feat .ico{
+  width:52px;height:52px;border-radius:12px;display:grid;place-items:center;margin-bottom:18px;
+  background:rgba(232,176,75,.12);border:1px solid rgba(232,176,75,.3);color:var(--gold2);font-size:1.4rem;
+}
+.feat h3{font-size:1.03rem;margin-bottom:10px}
+.feat p{font-size:.85rem;color:var(--muted);line-height:1.75}
+
+/* ============ 榜单 ============ */
+.chart-wrap{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.chart-col{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px}
+.chart-col h3{font-size:1.05rem;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.chart-col h3 .bar{width:4px;height:18px;background:var(--gold);border-radius:3px}
+.rank-item{display:flex;align-items:center;gap:14px;padding:11px 0;border-bottom:1px dashed var(--line);transition:.3s}
+.rank-item:last-child{border-bottom:none}
+.rank-item:hover{transform:translateX(5px)}
+.rank-no{width:24px;font-weight:900;font-style:italic;color:var(--muted);font-size:.95rem}
+.rank-item:nth-child(1) .rank-no,.rank-item:nth-child(2) .rank-no,.rank-item:nth-child(3) .rank-no{color:var(--gold)}
+.rank-info{flex:1;min-width:0}
+.rank-info b{display:block;font-size:.9rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rank-info span{font-size:.74rem;color:var(--muted)}
+.rank-hot{font-size:.76rem;color:var(--gold2);font-weight:700}
+
+/* ============ 关于 ============ */
+.about-sec{position:relative;overflow:hidden}
+.about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:64px;align-items:center}
+.about-visual{position:relative;height:380px}
+.frame{
+  position:absolute;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.1);
+  box-shadow:0 20px 50px rgba(0,0,0,.6);
+}
+.f1{width:64%;height:62%;top:0;left:0;z-index:2}
+.f2{width:52%;height:52%;bottom:0;right:0;z-index:3}
+.f3{width:42%;height:40%;bottom:12%;left:14%;z-index:1;opacity:.55}
+.about-text h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:20px;font-weight:800}
+.about-text p{color:var(--muted);font-size:.94rem;margin-bottom:16px}
+.about-points{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+.about-points li{display:flex;gap:10px;font-size:.88rem;color:var(--text)}
+.about-points li::before{content:"✓";color:var(--gold);font-weight:900}
+
+/* ============ 社区 ============ */
+.community-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:30px}
+.post{
+  background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px 22px;margin-bottom:18px;transition:.3s;
+}
+.post:hover{border-color:rgba(232,176,75,.4)}
+.post .head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.avatar{
+  width:40px;height:40px;border-radius:50%;display:grid;place-items:center;
+  font-weight:800;font-size:.9rem;color:#1a1206;
+}
+.post .head b{font-size:.88rem;display:block}
+.post .head span{font-size:.72rem;color:var(--muted)}
+.post p{font-size:.88rem;color:#c3cad6;line-height:1.8}
+.post .foot{display:flex;gap:22px;margin-top:14px;font-size:.78rem;color:var(--muted)}
+.post .foot span{transition:.3s;cursor:pointer}
+.post .foot span:hover{color:var(--gold2)}
+.side-card{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.side-card h4{font-size:.98rem;margin-bottom:18px;display:flex;gap:8px;align-items:center}
+.side-card h4::before{content:"";width:4px;height:16px;background:var(--gold);border-radius:2px}
+.topic{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px dashed var(--line);font-size:.85rem;color:#c3cad6;transition:.3s}
+.topic:hover{color:var(--gold2);transform:translateX(4px)}
+.topic:last-child{border-bottom:none}
+.topic em{font-style:normal;color:var(--muted);font-size:.75rem}
+
+/* ============ 订阅 ============ */
+.subscribe{
+  background:linear-gradient(130deg,#1c1509,#141821 60%);
+  border:1px solid rgba(232,176,75,.25);border-radius:22px;padding:56px 44px;
+  display:grid;grid-template-columns:1fr auto;gap:34px;align-items:center;position:relative;overflow:hidden;
+}
+.subscribe::after{
+  content:"";position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;
+  background:radial-gradient(circle,rgba(232,176,75,.22),transparent 70%);
+}
+.subscribe h2{font-size:clamp(1.4rem,2.6vw,2rem);margin-bottom:10px;font-weight:800}
+.subscribe p{color:var(--muted);font-size:.9rem}
+.sub-form{display:flex;gap:12px;position:relative;z-index:2}
+.sub-form input{
+  background:rgba(0,0,0,.35);border:1px solid var(--line);border-radius:40px;
+  padding:13px 24px;color:var(--text);outline:none;font-size:.9rem;min-width:250px;transition:.3s;
+}
+.sub-form input:focus{border-color:var(--gold)}
+.sub-form button{
+  background:var(--gold);border:none;color:#1a1206;font-weight:800;padding:13px 30px;
+  border-radius:40px;cursor:pointer;font-size:.9rem;transition:.3s;
+}
+.sub-form button:hover{background:var(--gold2);box-shadow:0 0 24px rgba(232,176,75,.5)}
+
+/* ============ FOOTER ============ */
+footer{background:var(--bg2);border-top:1px solid var(--line);padding:60px 0 0}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;padding-bottom:46px}
+.foot-brand p{color:var(--muted);font-size:.85rem;margin:16px 0 20px;max-width:300px}
+.socials{display:flex;gap:12px}
+.socials a{
+  width:38px;height:38px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;
+  color:var(--muted);transition:.3s;font-size:.8rem;
+}
+.socials a:hover{border-color:var(--gold);color:var(--gold2);transform:translateY(-3px)}
+.foot-col h4{font-size:.92rem;margin-bottom:18px;letter-spacing:1px}
+.foot-col li{margin-bottom:11px}
+.foot-col a{font-size:.84rem;color:var(--muted);transition:.25s}
+.foot-col a:hover{color:var(--gold2);padding-left:4px}
+.foot-bottom{border-top:1px solid var(--line);padding:22px 0;display:flex;justify-content:space-between;gap:14px;font-size:.78rem;color:var(--muted);flex-wrap:wrap}
+
+/* ============ reveal ============ */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.on{opacity:1;transform:none}
+
+/* ============ 响应式 ============ */
+@media(max-width:1000px){
+  .hero-grid,.about-grid,.community-grid,.chart-wrap{grid-template-columns:1fr}
+  .movie-grid{grid-template-columns:repeat(3,1fr)}
+  .feature-grid{grid-template-columns:repeat(2,1fr)}
+  .poster-stage{height:400px;margin-top:20px}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .subscribe{grid-template-columns:1fr}
+  nav{display:none}
+  nav.open{display:block;position:absolute;top:68px;left:0;right:0;background:var(--bg2);border-bottom:1px solid var(--line);padding:20px 0}
+  nav.open ul{flex-direction:column;gap:0;padding:0 6%}
+  nav.open li{padding:12px 0;border-bottom:1px solid var(--line)}
+  .menu-toggle{display:block}
+  .search-box,.btn-ghost{display:none}
+}
+@media(max-width:640px){
+  section{padding:56px 0}
+  .hero{padding:60px 0 46px}
+  .movie-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+  .feature-grid{grid-template-columns:1fr}
+  .poster{width:190px;height:270px}
+  .poster-stage{height:320px}
+  .p2{transform:translate(78px,0)}
+  .p3{transform:translate(156px,26px)}
+  .poster-stage:hover .p2{transform:translate(78px,-12px) scale(1.03)}
+  .hero-stats{gap:28px}
+  .foot-grid{grid-template-columns:1fr}
+  .about-points{grid-template-columns:1fr}
+  .sub-form{flex-direction:column}
+  .sub-form input{min-width:0;width:100%}
+  .subscribe{padding:36px 24px}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="container nav-wrap">
+    <a href="#" class="logo">
+      <div class="mark">牛</div>
+      <span>老牛电影<small>LAONIU MOVIE</small></span>
+    </a>
+    <nav id="nav">
+      <ul>
+        <li><a href="#home">首页</a></li>
+        <li><a href="#movies">影片库</a></li>
+        <li><a href="#charts">热门榜</a></li>
+        <li><a href="#about">关于我们</a></li>
+        <li><a href="#community">影迷社区</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <div class="search-box">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="text" placeholder="搜索影片、演员…">
+      </div>
+      <a href="#subscribe" class="btn-ghost">加入影迷团</a>
+      <button class="menu-toggle" id="menuToggle">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <div class="tagline"><span class="dot"></span>老牛电影 · 在线观看免费版</div>
+      <h1><span class="hl">老牛电影</span><br>好片随时看</h1>
+      <p class="hero-sub">从经典老片到当季热门，老牛电影在线观看免费版为你准备了类型丰富的片库。清晰的分类、精选的片单、真实的影迷讨论，让每一次打开都值得期待。</p>
+      <div class="hero-cta">
+        <a href="#movies" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          开始观影
+        </a>
+        <a href="#charts" class="btn-line">查看热门榜单 →</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>8600+</strong><span>影片收录</span></div>
+        <div><strong>26</strong><span>类型分区</span></div>
+        <div><strong>120万</strong><span>影迷同行</span></div>
+      </div>
+    </div>
+    <div class="poster-stage">
+      <div class="poster p1">
+        <div class="cover art" data-art="1" style="background:linear-gradient(160deg,#2b3547,#141821)">
+          <svg viewBox="0 0 250 350" style="width:100%;height:100%">
+            <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3c4a63"/><stop offset="1" stop-color="#141821"/></linearGradient></defs>
+            <rect width="250" height="350" fill="url(#g1)"/>
+            <circle cx="125" cy="130" r="52" fill="none" stroke="#e8b04b" stroke-width="1.2" opacity=".5"/>
+            <circle cx="125" cy="130" r="34" fill="none" stroke="#e8b04b" stroke-width=".8" opacity=".3"/>
+            <path d="M20 260 Q125 210 230 260" stroke="#e8b04b" stroke-width="1.4" fill="none" opacity=".6"/>
+            <text x="125" y="145" font-size="22" fill="#f5cd7a" text-anchor="middle" font-family="serif">长夜</text>
+            <text x="125" y="172" font-size="11" fill="#9aa3b2" text-anchor="middle" letter-spacing="4">LONG NIGHT</text>
+          </svg>
+        </div>
+        <div class="meta"><b>长夜将尽</b><i>剧情 · 文艺</i></div>
+        <div class="play-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>
+      </div>
+      <div class="poster p2">
+        <div class="cover art" data-art="2" style="background:linear-gradient(160deg,#3a2a1b,#141821)">
+          <svg viewBox="0 0 250 350" style="width:100%;height:100%">
+            <defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5d4322"/><stop offset="1" stop-color="#141821"/></linearGradient></defs>
+            <rect width="250" height="350" fill="url(#g2)"/>
+            <path d="M0 240 L250 200 L250 350 L0 350Z" fill="#0e1118" opacity=".8"/>
+            <path d="M60 240 L95 90 L130 240Z" fill="#e8b04b" opacity=".22"/>
+            <path d="M120 240 L150 60 L180 240Z" fill="#f5cd7a" opacity=".16"/>
+            <text x="125" y="300" font-size="20" fill="#f5cd7a" text-anchor="middle" font-family="serif">沙海</text>
+            <text x="125" y="322" font-size="10" fill="#9aa3b2" text-anchor="middle" letter-spacing="4">SAND SEA</text>
+          </svg>
+        </div>
+        <div class="meta"><b>沙海孤旅</b><i>冒险 · 悬疑</i></div>
+        <div class="play-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>
+      </div>
+      <div class="poster p3">
+        <div class="cover art" data-art="3" style="background:linear-gradient(160deg,#1f3a35,#141821)">
+          <svg viewBox="0 0 250 350" style="width:100%;height:100%">
+            <defs><linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2c554c"/><stop offset="1" stop-color="#141821"/></linearGradient></defs>
+            <rect width="250" height="350" fill="url(#g3)"/>
+            <path d="M125 60 L200 300 L50 300Z" fill="none" stroke="#5fd6b4" stroke-width="1.2" opacity=".5"/>
+            <path d="M125 120 L175 300 L75 300Z" fill="none" stroke="#5fd6b4" stroke-width=".8" opacity=".3"/>
+            <circle cx="125" cy="120" r="5" fill="#5fd6b4"/>
+            <text x="125" y="200" font-size="20" fill="#a9f0dd" text-anchor="middle" font-family="serif">回声</text>
+            <text x="125" y="222" font-size="10" fill="#9aa3b2" text-anchor="middle" letter-spacing="4">ECHO</text>
+          </svg>
+        </div>
+        <div class="meta"><b>回声试验</b><i>科幻 · 剧情</i></div>
+        <div class="play-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ticker -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span>本周新上架 · 46 部影片</span>
+    <span>老牛电影在线观看免费版 · 高清不卡顿</span>
+    <span>经典修复专区已开放</span>
+    <span>影迷评分 9.2 的年度佳作上线</span>
+    <span>纪录片专题 · 山河纪事</span>
+    <span>本周新上架 · 46 部影片</span>
+    <span>老牛电影在线观看免费版 · 高清不卡顿</span>
+    <span>经典修复专区已开放</span>
+    <span>影迷评分 9.2 的年度佳作上线</span>
+    <span>纪录片专题 · 山河纪事</span>
+  </div>
+</div>
+
+<!-- MOVIES -->
+<section id="movies">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="t">
+        <small>MOVIE LIBRARY</small>
+        <h2>精选影片库</h2>
+        <p>按类型挑选你想看的电影，每一部都由编辑与影迷共同筛选。</p>
+      </div>
+      <a href="#" class="more-link">查看全部影片</a>
+    </div>
+    <div class="filters reveal">
+      <div class="chip active">全部</div>
+      <div class="chip">剧情</div>
+      <div class="chip">悬疑</div>
+      <div class="chip">科幻</div>
+      <div class="chip">动作</div>
+      <div class="chip">喜剧</div>
+      <div class="chip">纪录片</div>
+      <div class="chip">经典修复</div>
+    </div>
+    <div class="movie-grid" id="movieGrid">
+      <div class="card reveal">
+        <div class="thumb">
+          <div class="art" style="background:linear-gradient(160deg,#33405a,#161b25)">
+            <svg viewBox="0 0 200 290" style="width:100%;height:100%">
+              <circle cx="100" cy="110" r="44" fill="none" stroke="#e8b04b" stroke-width="1" opacity=".5"/>
+              <circle cx="100" cy="110" r="26" fill="none" stroke="#e8b04b" stroke-width=".7" opacity=".3"/>
+              <path d="M30 210 Q100 175 170 210" stroke="#e8b04b" stroke-width="1.2" fill="none" opacity=".45"/>
+              <text x="100" y="120" font-size="18" fill="#f5cd7a" text-anchor="middle" font-family="serif">长夜</text>
+            </svg>
+          </div>
+          <span class="score">9.1</span><span class="tag">热映</span>
+        </div>
+        <div class="body"><h3>长夜将尽</h3><div class="sub"><span>剧情 / 2024</span><span>128分钟</span></div></div>
+      </div>
+      <div class="card reveal">
+        <div class="thumb">
+          <div class="art" style="background:linear-gradient(160deg,#5d4322,#161b25)">
+            <svg viewBox="0 0 200 290" style="width:100%;height:100%">
+              <path d="M0 190 L200 160 L200 290 L0 290Z" fill="#0e1118" opacity=".85"/>
+              <path d="M50 190 L80 70 L110 190Z" fill="#e8b04b" opacity=".25"/>
+              <text x="100" y="245" font-size="17" fill="#f5cd7a" text-anchor="middle" font-family="serif">沙海</text>
+            </svg>
+          </div>
+          <span class="score">8.7</span><span class="tag">新片</span>
+        </div>
+        <div class="body"><h3>沙海孤旅</h3><div class="sub"><span>冒险 / 悬疑</span><span>116分钟</span></div></div>
+      </div>
+      <div class="card reveal">
+        <div class="thumb">
+          <div class="art" style="background:linear-gradient(160deg,#2c554c,#161b25)">
+            <svg viewBox="0 0 200 290" style="width:100%;height:100%">
+              <path d="M100 50 L160 240 L40 240Z" fill="none" stroke="#5fd6b4" stroke-width="1.2" opacity=".5"/>
+              <circle cx="100" cy="100" r="4" fill="#5fd6b4"/>
+              <text x="100" y="160" font-size="17" fill="#a9f0dd" text-anchor="middle" font-family="serif">回声</text>
+            </svg>
+          </div>
+          <span class="score">8.9</span>
+        </div>
+        <div class="body"><h3>回声试验</h3><div class="sub"><span>科幻 / 剧情</span><span>134分钟</span></div></div>
+      </div>
+      <div class="card reveal">
+        <div class="thumb">
+          <div class="art" style="background:linear-gradient(160deg,#4a2b3b,#161b25)">
+            <svg viewBox="0 0 200 290" style="width:100%;height:100%">
+              <rect x="55" y="70" width="90" height="120" fill="none" stroke="#d9534f" stroke-width="1.1" opacity=".55"/>
+              <path d="M55 130 L145 130 M100 70 L100 190" stroke="#d9534f" stroke-width=".8" opacity=".35"/>
+              <text x="100" y="140" font-size="16" fill="#f0a3a1" text-anchor="middle" font-family="serif">谜城</text>
+            </svg>
+          </div>
+          <span class="score">8.5</span><span class="tag">独播</span>
+        </div>
+        <div class="body"><h3>谜城暗涌</h3><div class="sub"><span>悬疑 / 犯罪</span><span>122分钟</span></div></div>
+      </div>
+      <div class="card reveal">
+        <div class="thumb">
+          <div class="art" style="background:linear-gradient(160deg,#3f3a25,#161b25)">
+            <svg viewBox="0 0 200 290" style="width:100%;height:100%">
+              <circle cx="100" cy="120" r="55" fill="none" stroke="#e8b04b" stroke-width="1" opacity=".4"/>
+              <path d="M70 120 Q100 80 130 120 Q100 160 70 120Z" fill="#e8b04b" opacity=".25"/>
+              <text x="100" y="126" font-size="16" fill="#f5cd7a" text-anchor="middle" font-family="serif">归途</text>
+            </svg>
+          </div>
+          <span class="score">9.0</span>
+        </div>
+        <div class="body"><h3>归途有风</h3><div class="sub"><span>剧情 / 家庭</span><span>108分钟</span></div></div>
+      </div>
+      <div class="card reveal">
+        <div class="thumb">
+          <div class="art" style="background:linear-gradient(160deg,#26303f,#161b25)">
+            <svg viewBox="0 0 200 290" style="width:100%;height:100%">
+              <path d="M20 200 L100 80 L180 200" fill="none" stroke="#7fa7d8" stroke-width="1.2" opacity=".55"/>
+              <path d="M40 200 L100 110 L160 200" fill="none" stroke="#7fa7d8" stroke-width=".8" opacity=".35"/>
+              <text x="100" y="165" font-size="16" fill="#bcd6f5" text-anchor="middle" font-family="serif">雪线</text>
+            </svg>
+          </div>
+          <span class="score">8.3</span>
+        </div>
+        <div class="body"><h3>雪线之上</h3><div class="sub"><span>纪录片</span><span>96分钟</span></div></div>
+      </div>
+      <div class="card reveal">
+        <div class="thumb">
+          <div class="art" style="background:linear-gradient(160deg,#43305a,#161b25)">
+            <svg viewBox="0 0 200 290" style="width:100%;height:100%">
+              <circle cx="100" cy="130" r="50" fill="none" stroke="#b58ff0" stroke-width="1" opacity=".5"/>
+              <path d="M60 130 L140 130 M100 90 L100 170" stroke="#b58ff0" stroke-width=".8" opacity=".3"/>
+              <text x="100" y="136" font-size="16" fill="#d4c2f5" text-anchor="middle" font-family="serif">星轨</text>
+            </svg>
+          </div>
+          <span class="score">8.6</span>
+        </div>
+        <div class="body"><h3>星轨之外</h3><div class="sub"><span>科幻 / 太空</span><span>140分钟</span></div></div>
+      </div>
+      <div class="card reveal">
+        <div class="thumb">
+          <div class="art" style="background:linear-gradient(160deg,#3d2b22,#161b25)">
+            <svg viewBox="0 0 200 290" style="width:100%;height:100%">
+              <path d="M0 200 Q100 150 200 200 L200 290 L0 290Z" fill="#0e1118" opacity=".8"/>
+              <circle cx="100" cy="110" r="30" fill="#e8b04b" opacity=".22"/>
+              <text x="100" y="118" font-size="16" fill="#f5cd7a" text-anchor="middle" font-family="serif">故人</text>
+            </svg>
+          </div>
+          <span class="score">8.8</span><span class="tag">修复</span>
+        </div>
+        <div class="body"><h3>故人旧影</h3><div class="sub"><span>经典修复</span><span>102分钟</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="feature-sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="t">
+        <small>WHY LAONIU</small>
+        <h2>为什么选择老牛电影</h2>
+        <p>我们相信，好的观影体验来自清晰、流畅与尊重内容本身。</p>
+      </div>
+    </div>
+    <div class="feature-grid">
+      <div class="feat reveal">
+        <div class="ico">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"/></svg>
+        </div>
+        <h3>在线观看免费版</h3>
+        <p>无需复杂流程，打开即看。老牛电影在线观看免费版整理多类型片源，让好内容触手可及。</p>
+      </div>
+      <div class="feat reveal">
+        <div class="ico">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 6h16M4 12h10M4 18h7"/></svg>
+        </div>
+        <h3>清晰分类片单</h3>
+        <p>按类型、年代、口碑多维分类，配合编辑精选片单，快速找到合乎心境的那一部。</p>
+      </div>
+      <div class="feat reveal">
+        <div class="ico">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.6 5.6L21 9.4l-4.5 4.3 1.1 6.3L12 17l-5.6 3 1.1-6.3L3 9.4l6.4-.8z"/></svg>
+        </div>
+        <h3>影迷真实评分</h3>
+        <p>评分来自长期活跃的影迷社区，每一条评论都言之有物，帮助你在选择前心里有数。</p>
+      </div>
+      <div class="feat reveal">
+        <div class="ico">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>
+        </div>
+        <h3>稳定流畅播放</h3>
+        <p>多线路适配不同网络环境，画面清晰度可自由切换，让观影专注而舒服。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHARTS -->
+<section id="charts">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="t">
+        <small>CHART & TREND</small>
+        <h2>本周热门榜单</h2>
+        <p>数据来自站内播放与影迷讨论，每周更新一次。</p>
+      </div>
+      <a href="#movies" class="more-link">浏览完整片库</a>
+    </div>
+    <div class="chart-wrap">
+      <div class="chart-col reveal">
+        <h3><span class="bar"></span>播放热度榜</h3>
+        <div class="rank-item"><span class="rank-no">01</span><div class="rank-info"><b>长夜将尽</b><span>剧情 · 文艺</span></div><span class="rank-hot">↑ 12%</span></div>
+        <div class="rank-item"><span class="rank-no">02</span><div class="rank-info"><b>回声试验</b><span>科幻 · 剧情</span></div><span class="rank-hot">↑ 9%</span></div>
+        <div class="rank-item"><span class="rank-no">03</span><div class="rank-info"><b>沙海孤旅</b><span>冒险 · 悬疑</span></div><span class="rank-hot">↑ 7%</span></div>
+        <div class="rank-item"><span class="rank-no">04</span><div class="rank-info"><b>归途有风</b><span>剧情 · 家庭</span></div><span class="rank-hot">↑ 5%</span></div>
+        <div class="rank-item"><span class="rank-no">05</span><div class="rank-info"><b>谜城暗涌</b><span>悬疑 · 犯罪</span></div><span class="rank-hot">↑ 4%</span></div>
+        <div class="rank-item"><span class="rank-no">06</span><div class="rank-info"><b>星轨之外</b><span>科幻 · 太空</span></div><span class="rank-hot">↑ 3%</span></div>
+      </div>
+      <div class="chart-col reveal">
+        <h3><span class="bar"></span>影迷口碑榜</h3>
+        <div class="rank-item"><span class="rank-no">01</span><div class="rank-info"><b>故人旧影</b><span>经典修复 · 4K</span></div><span class="rank-hot">9.4</span></div>
+        <div class="rank-item"><span class="rank-no">02</span><div class="rank-info"><b>长夜将尽</b><span>剧情 · 文艺</span></div><span class="rank-hot">9.1</span></div>
+        <div class="rank-item"><span class="rank-no">03</span><div class="rank-info"><b>归途有风</b><span>剧情 · 家庭</span></div><span class="rank-hot">9.0</span></div>
+        <div class="rank-item"><span class="rank-no">04</span><div class="rank-info"><b>回声试验</b><span>科幻 · 剧情</span></div><span class="rank-hot">8.9</span></div>
+        <div class="rank-item"><span class="rank-no">05</span><div class="rank-info"><b>沙海孤旅</b><span>冒险 · 悬疑</span></div><span class="rank-hot">8.7</span></div>
+        <div class="rank-item"><span class="rank-no">06</span><div class="rank-info"><b>雪线之上</b><span>纪录片 · 自然</span></div><span class="rank-hot">8.6</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about-sec">
+  <div class="container about-grid">
+    <div class="about-visual reveal">
+      <div class="frame f1" style="background:linear-gradient(150deg,#2b3547,#161b25)">
+        <svg viewBox="0 0 200 200" style="width:100%;height:100%">
+          <circle cx="100" cy="90" r="46" fill="none" stroke="#e8b04b" stroke-width="1" opacity=".5"/>
+          <circle cx="100" cy="90" r="28" fill="none" stroke="#e8b04b" stroke-width=".7" opacity=".3"/>
+          <text x="100" y="98" font-size="16" fill="#f5cd7a" text-anchor="middle" font-family="serif">放映</text>
+        </svg>
+      </div>
+      <div class="frame f2" style="background:linear-gradient(150deg,#4a2b3b,#161b25)">
+        <svg viewBox="0 0 200 200" style="width:100%;height:100%">
+          <rect x="45" y="50" width="110" height="100" fill="none" stroke="#d9534f" stroke-width="1.1" opacity=".55"/>
+          <path d="M45 100 L155 100" stroke="#d9534f" stroke-width=".8" opacity=".3"/>
+          <text x="100" y="108" font-size="15" fill="#f0a3a1" text-anchor="middle" font-family="serif">社区</text>
+        </svg>
+      </div>
+      <div class="frame f3" style="background:linear-gradient(150deg,#2c554c,#161b25)">
+        <svg viewBox="0 0 200 200" style="width:100%;height:100%">
+          <path d="M100 40 L160 170 L40 170Z" fill="none" stroke="#5fd6b4" stroke-width="1.1" opacity=".5"/>
+        </svg>
+      </div>
+    </div>
+    <div class="about-text reveal">
+      <small style="color:var(--gold);letter-spacing:3px;font-size:.75rem;font-weight:700">ABOUT LAONIU</small>
+      <h2 style="margin-top:10px">一群爱电影的人<br>做的一站式观影空间</h2>
+      <p>老牛电影起步于一个小型影迷论坛。那时候我们只是想把各自珍藏的片单分享出来，让喜欢电影的人在碎片时间里，也能踏踏实实坐下来看完一部好片。</p>
+      <p>如今的「老牛电影在线观看免费版」延续了这份初衷：片库持续扩充，分类保持克制，评论保持真实。我们不追求花哨，只希望页面干净、影片好找、看片顺畅。</p>
+      <ul class="about-points">
+        <li>海量片库持续更新</li>
+        <li>多类型清晰分区</li>
+        <li>真实影迷评分体系</li>
+        <li>活跃的讨论社区</li>
+        <li>经典影片修复计划</li>
+        <li>独立纪录片支持</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section id="community" style="background:var(--bg2);border-top:1px solid var(--line)">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="t">
+        <small>FILM COMMUNITY</small>
+        <h2>影迷社区动态</h2>
+        <p>每天都有新的话题、新的观后感、新的片单在被分享。</p>
+      </div>
+      <a href="#subscribe" class="more-link">加入一起聊</a>
+    </div>
+    <div class="community-grid">
+      <div>
+        <div class="post reveal">
+          <div class="head">
+            <div class="avatar" style="background:linear-gradient(135deg,#e8b04b,#b9812c)">林</div>
+            <div><b>林间放片人</b><span>2 小时前 · 观后感</span></div>
+          </div>
+          <p>《长夜将尽》的节奏很慢，但慢得有道理。镜头停留在人物的沉默里，那种欲言又止的重量，比台词更有力量。看完在窗边坐了很久。</p>
+          <div class="foot"><span>♡ 128</span><span>◌ 42 条评论</span><span>⇱ 分享</span></div>
+        </div>
+        <div class="post reveal">
+          <div class="head">
+            <div class="avatar" style="background:linear-gradient(135deg,#5fd6b4,#2c554c)">影</div>
+            <div><b>银河放映员</b><span>5 小时前 · 片单推荐</span></div>
+          </div>
+          <p>整理了一份「适合深夜独自观看」的科幻片单，共 12 部。从《回声试验》到一些冷门老片，氛围感拉满。已经放在社区置顶，欢迎补充。</p>
+          <div class="foot"><span>♡ 96</span><span>◌ 31 条评论</span><span>⇱ 分享</span></div>
+        </div>
+        <div class="post reveal">
+          <div class="head">
+            <div class="avatar" style="background:linear-gradient(135deg,#b58ff0,#43305a)">周</div>
+            <div><b>周末不睡</b><span>昨天 · 讨论</span></div>
+          </div>
+          <p>有没有人和我一样，看完《归途有风》后立刻给家里打了电话？老牛电影这种家庭题材的选片眼光一直很稳，希望多上这类。</p>
+          <div class="foot"><span>♡ 210</span><span>◌ 67 条评论</span><span>⇱ 分享</span></div>
+        </div>
+      </div>
+      <div class="side-card reveal">
+        <h4>本周热议话题</h4>
+        <a href="#" class="topic">＃你心中的年度最佳影片<em>1.2k</em></a>
+        <a href="#" class="topic">＃经典影片修复值得吗<em>864</em></a>
+        <a href="#" class="topic">＃深夜观影片单交换<em>742</em></a>
+        <a href="#" class="topic">＃那些被低估的纪录片<em>631</em></a>
+        <a href="#" class="topic">＃一句话安利一部电影<em>588</em></a>
+        <a href="#" class="topic">＃老牛电影新片速递<em>475</em></a>
+        <a href="#" class="topic">＃科幻电影里的真实感<em>402</em></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUBSCRIBE -->
+<section id="subscribe">
+  <div class="container">
+    <div class="subscribe reveal">
+      <div>
+        <h2>订阅老牛电影 · 每周片单直达</h2>
+        <p>留下邮箱，每周收到编辑部精选片单与上新提醒，不错过任何一部好电影。</p>
+      </div>
+      <form class="sub-form" onsubmit="event.preventDefault();this.querySelector('button').textContent='已订阅 ✓';this.querySelector('input').value='';">
+        <input type="email" placeholder="请输入你的邮箱" required>
+        <button type="submit">立即订阅</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#" class="logo">
+          <div class="mark">牛</div>
+          <span>老牛电影<small>LAONIU MOVIE</small></span>
+        </a>
+        <p>老牛电影在线观看免费版，为影迷提供清晰分类的片库与真实的社区讨论，让每一次观影都有所期待。</p>
+        <div class="socials">
+          <a href="#" title="微博">微</a>
+          <a href="#" title="豆瓣">豆</a>
+          <a href="#" title="B站">B</a>
+          <a href="#" title="知乎">知</a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>探索</h4>
+        <ul>
+          <li><a href="#movies">全部影片</a></li>
+          <li><a href="#charts">热门榜单</a></li>
+          <li><a href="#movies">经典修复</a></li>
+          <li><a href="#movies">纪录片专区</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>社区</h4>
+        <ul>
+          <li><a href="#community">影迷讨论</a></li>
+          <li><a href="#community">片单分享</a></li>
+          <li><a href="#community">观后感</a></li>
+          <li><a href="#subscribe">订阅通讯</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>关于</h4>
+        <ul>
+          <li><a href="#about">品牌故事</a></li>
+          <li><a href="#about">编辑团队</a></li>
+          <li><a href="#">版权说明</a></li>
+          <li><a href="#">联系我们</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2024 老牛电影 · 保留所有权利</span>
+      <span>本页面为演示用途 · 影片信息均为示例</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* 移动端菜单 */
+  var toggle=document.getElementById('menuToggle');
+  var nav=document.getElementById('nav');
+  if(toggle){toggle.addEventListener('click',function(){nav.classList.toggle('open');});}
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){nav.classList.remove('open');});
+  });
+
+  /* 分类筛选 */
+  var chips=document.querySelectorAll('.chip');
+  var cards=document.querySelectorAll('#movieGrid .card');
+  chips.forEach(function(chip){
+    chip.addEventListener('click',function(){
+      chips.forEach(function(c){c.classList.remove('active');});
+      chip.classList.add('active');
+      var key=chip.textContent.trim();
+      cards.forEach(function(card){
+        var txt=card.textContent;
+        card.style.display=(key==='全部'||txt.indexOf(key)>-1)?'':'none';
+      });
+    });
+  });
+
+  /* 滚动显现 */
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}
+    });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+  /* 卡片点击轻反馈 */
+  cards.forEach(function(card){
+    card.addEventListener('click',function(){
+      card.style.transform='translateY(-4px) scale(.985)';
+      setTimeout(function(){card.style.transform='';},180);
+    });
+  });
+})();
+</script>
+</body>
+  </html>
